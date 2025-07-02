@@ -1,0 +1,25 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class ButtonHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+{
+    public GameObject handImage;
+
+    void Start()
+    {
+        if (handImage != null)
+            handImage.SetActive(false);  // Ensure it's hidden at start
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (handImage != null)
+            handImage.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (handImage != null)
+            handImage.SetActive(false);
+    }
+}
